@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "LeetGPT",
+    "description": "This extension leverages an OpenAI API to provide LeetCode users with problem solutions",
+    "version": "1.0.0",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Open the popup"
+    },
+    "icons": {
+        "16": "icon2.png",
+        "48": "icon2.png",
+        "128": "icon2.png"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://*/"
+    ]
+}
