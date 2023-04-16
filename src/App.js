@@ -127,7 +127,7 @@ function App() {
   if (isLoading) { // 'State' of being logged in
     loadComponent = (
       <Stack sx={{ width: '100%', color: 'grey.500' }} spacing={2}>
-        <LinearProgress color="secondary" />
+        <LinearProgress sx={{'& .MuiLinearProgress-bar': {backgroundColor: 'orange'}}}/>
       </Stack>
     )
   } else {
