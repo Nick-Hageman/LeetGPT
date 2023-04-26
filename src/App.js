@@ -27,6 +27,50 @@ function App() {
     apiKey: apiKey,
   });
 
+  useEffect(() => { // Run once when page loads
+    // The below Code gathers the LeetCode problem prompt which will be sent to the API
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      // Get the active tab
+      let tab = tabs[0];
+
+      // Inject the content script
+      chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        func: () => {
+          // Find the element with the class you want to extract text from
+          let element = document.querySelector('._1l1MA');
+
+          // Extract the text from the element
+          let text = element.innerText;
+
+          // Send the text back to the extension
+          chrome.runtime.sendMessage({text: text});
+          
+          //console.log(text);
+        }
+      });
+    });
+
+    // Listen for the onMessage event
+    chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+      // Check if the message contains an error
+      if (message.error) {
+        console.error(message.error);
+        return;
+      }
+
+      // Access the text from the message
+      let text = message.text;
+      setLeetcodeQuestion(text); // store the text in global variable
+      console.log(leetcodeQuestion);
+
+      // Do something with the text
+      //console.log(text); // This will show what the javascript captures as the "prompt for the Leetcode Problem"
+
+      // Send a response back to the content script
+      sendResponse({received: true});
+    });
+  }, []);
 
   const openai = new OpenAIApi(configuration);
 
