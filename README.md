@@ -1,4 +1,4 @@
-![leetgpt](https://user-images.githubusercontent.com/91749467/232361459-5f2f6501-64ac-4366-90ea-650fb79fc37f.PNG)
+[leetGPT.webm](https://user-images.githubusercontent.com/91749467/234675882-c5ab7949-d1ca-4bc3-89d5-084b1790b58c.webm)
 
 ## Prerequisites:
 **- Node**<br>
