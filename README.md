@@ -1,4 +1,4 @@
-[leetGPT.webm](https://user-images.githubusercontent.com/91749467/234675882-c5ab7949-d1ca-4bc3-89d5-084b1790b58c.webm)
+https://github.com/Nick-Hageman/LeetGPT/assets/91749467/cd7ba4c6-b096-460a-a576-727b88d9819a
 
 ## Prerequisites:
 **- Node**<br>
